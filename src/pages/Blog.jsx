@@ -283,7 +283,7 @@ const Blog = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Restez informé
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white/90 mb-8">
               Inscrivez-vous à notre newsletter pour recevoir nos derniers articles et actualités
             </p>
             <form className="flex flex-col sm:flex-row gap-4">

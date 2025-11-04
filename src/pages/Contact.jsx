@@ -179,7 +179,7 @@ const Contact = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Besoin d'une intervention urgente ?
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Notre équipe est disponible 24/7 pour les urgences. 
               N'hésitez pas à nous appeler immédiatement.
             </p>

@@ -32,11 +32,31 @@ export default {
           800: '#92400e',
           900: '#78350f',
         },
+        // Couleurs secondaires optimisées pour lisibilité
+        secondary: {
+          light: '#f0f9ff',    // Très clair pour fonds
+          medium: '#e0f2fe',   // Clair pour cartes
+          DEFAULT: '#0284c7',  // Cyan lisible
+          dark: '#0c4a6e',     // Sombre mais lisible
+        },
         accent: {
           cyan: '#06b6d4',
           purple: '#a855f7',
           pink: '#ec4899',
           orange: '#f97316',
+        },
+        // Nuances de gris optimisées pour contraste
+        neutral: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',  // Contraste minimal 4.5:1
+          500: '#737373',  // Bon contraste
+          600: '#525252',  // Excellent contraste
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
         }
       },
       fontFamily: {

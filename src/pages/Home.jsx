@@ -188,7 +188,7 @@ const Home = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
               Pourquoi choisir SBS-GROUPE ?
             </h2>
-            <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto">
               Votre partenaire de confiance pour des projets réussis
             </p>
           </motion.div>
@@ -214,7 +214,7 @@ const Home = () => {
                 <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 group-hover:text-gold-400 transition-colors">
                   {strength.title}
                 </h3>
-                <p className="text-sm sm:text-base text-blue-100">{strength.description}</p>
+                <p className="text-sm sm:text-base text-white/85">{strength.description}</p>
               </motion.div>
             ))}
           </div>
@@ -433,7 +433,7 @@ const Home = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Prêt à démarrer votre projet ?
               </h2>
-              <p className="text-xl md:text-2xl mb-10 text-blue-100 max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-2xl mx-auto">
                 Contactez-nous dès aujourd'hui pour un devis gratuit et personnalisé
               </p>
               

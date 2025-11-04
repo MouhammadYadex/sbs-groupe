@@ -245,18 +245,18 @@ const Services = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               <div>
                 <div className="text-5xl font-bold mb-2">100%</div>
-                <p className="text-blue-100">Normes respectées</p>
+                <p className="text-white/90">Normes respectées</p>
               </div>
               <div>
                 <div className="text-5xl font-bold mb-2">98%</div>
-                <p className="text-blue-100">Clients satisfaits</p>
+                <p className="text-white/90">Clients satisfaits</p>
               </div>
               <div>
                 <div className="text-5xl font-bold mb-2">95%</div>
-                <p className="text-blue-100">Projets livrés à temps</p>
+                <p className="text-white/90">Projets livrés à temps</p>
               </div>
             </div>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white/90 mb-8">
               Nous nous engageons à respecter les plus hauts standards de qualité, 
               de sécurité et de respect de l'environnement sur tous nos chantiers.
             </p>
@@ -274,7 +274,7 @@ const Services = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Vous avez un projet en tête ?
             </h2>
-            <p className="text-xl mb-8 text-blue-100">
+            <p className="text-xl mb-8 text-white/90">
               Contactez-nous pour discuter de votre projet et obtenir un devis gratuit
             </p>
             <Link to="/contact" className="bg-white text-primary-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all inline-block shadow-lg">

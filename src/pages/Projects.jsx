@@ -71,7 +71,7 @@ const Projects = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Nos chiffres en un coup d'œil
             </h2>
-            <p className="text-xl text-blue-100">
+            <p className="text-xl text-white/90">
               Une expérience qui fait la différence
             </p>
           </div>
@@ -92,7 +92,7 @@ const Projects = () => {
                 <div className="text-5xl md:text-6xl font-bold mb-2">
                   {stat.number}
                 </div>
-                <div className="text-lg text-blue-100">{stat.label}</div>
+                <div className="text-lg text-white/90">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -185,7 +185,7 @@ const Projects = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Votre projet sera notre prochaine réalisation
             </h2>
-            <p className="text-xl mb-8 text-blue-100">
+            <p className="text-xl mb-8 text-white/90">
               Discutons ensemble de votre vision et transformons-la en réalité
             </p>
             <a href="/contact" className="bg-white text-primary-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all inline-block shadow-lg">

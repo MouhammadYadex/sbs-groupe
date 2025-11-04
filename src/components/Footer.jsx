@@ -199,7 +199,7 @@ const Footer = () => {
                 </div>
               </div>
               
-              <p className="text-gray-400 mb-4 sm:mb-5 text-sm leading-relaxed">
+              <p className="text-gray-300 mb-4 sm:mb-5 text-sm leading-relaxed">
                 Leader en construction avec <span className="text-white font-semibold">15+ ans d'expérience</span>.
               </p>
               
@@ -220,7 +220,7 @@ const Footer = () => {
                     className={`w-11 h-11 sm:w-10 sm:h-10 bg-gray-800/50 border border-gray-700/50 rounded-lg flex items-center justify-center ${color} transition-all touch-manipulation active:scale-95`}
                     style={{ minHeight: '44px', minWidth: '44px' }}
                   >
-                    <IconComponent size={18} className="text-gray-400 sm:w-4 sm:h-4" />
+                    <IconComponent size={18} className="text-gray-300 sm:w-4 sm:h-4" />
                   </motion.a>
                 ))}
               </div>
@@ -240,7 +240,7 @@ const Footer = () => {
                 <li key={link.path}>
                   <Link 
                     to={link.path}
-                    className="group flex items-center gap-2 text-gray-400 hover:text-gold-400 transition-all text-sm py-2 touch-manipulation active:scale-98"
+                    className="group flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-all text-sm py-2 touch-manipulation active:scale-98"
                     style={{ minHeight: '44px' }}
                   >
                     <div className="w-1 h-1 rounded-full bg-primary-500 group-hover:bg-gold-400"></div>
@@ -269,7 +269,7 @@ const Footer = () => {
                   >
                     <span className="text-white text-xs">✓</span>
                   </motion.div>
-                  <span className="text-gray-400 group-hover:text-white transition-colors text-sm">{service}</span>
+                  <span className="text-gray-300 group-hover:text-white transition-colors text-sm">{service}</span>
                 </li>
               ))}
             </ul>
@@ -302,11 +302,11 @@ const Footer = () => {
                     <Icon size={16} className="text-white sm:w-[14px] sm:h-[14px]" />
                   </motion.div>
                   {href ? (
-                    <a href={href} className="text-gray-400 hover:text-white transition-colors text-sm touch-manipulation active:scale-98">
+                    <a href={href} className="text-gray-300 hover:text-white transition-colors text-sm touch-manipulation active:scale-98">
                       {content}
                     </a>
                   ) : (
-                    <span className="text-gray-400 group-hover:text-white transition-colors text-sm">
+                    <span className="text-gray-300 group-hover:text-white transition-colors text-sm">
                       {content}
                     </span>
                   )}
@@ -324,7 +324,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></div>
-              <p className="text-gray-400 text-center md:text-left">
+              <p className="text-gray-300 text-center md:text-left">
                 &copy; {currentYear} <span className="text-white font-semibold">SBS-GROUPE</span> - Tous droits réservés
               </p>
             </div>
@@ -339,7 +339,7 @@ const Footer = () => {
                 <Link 
                   key={index}
                   to={item.path}
-                  className="text-gray-400 hover:text-gold-400 transition-colors relative group text-xs sm:text-sm py-2 touch-manipulation active:scale-98"
+                  className="text-gray-300 hover:text-gold-400 transition-colors relative group text-xs sm:text-sm py-2 touch-manipulation active:scale-98"
                   style={{ minHeight: '44px', display: 'inline-flex', alignItems: 'center' }}
                 >
                   {item.label}
@@ -348,7 +348,7 @@ const Footer = () => {
             </div>
 
             {/* Made with love */}
-            <div className="flex items-center gap-1.5 text-xs text-gray-500">
+            <div className="flex items-center gap-1.5 text-xs text-gray-400">
               <span>Conçu avec</span>
               <motion.span
                 animate={{ scale: [1, 1.2, 1] }}
