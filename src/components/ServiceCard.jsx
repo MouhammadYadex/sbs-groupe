@@ -27,34 +27,34 @@ const ServiceCard = ({ icon: Icon, title, description, index = 0 }) => {
         y: -8,
         transition: { duration: 0.3 }
       }}
-      className="relative group"
+      className="relative group touch-manipulation active:scale-98"
       data-aos="fade-up"
       data-aos-delay={index * 100}
     >
-      {/* Carte principale avec effets */}
-      <div className="relative h-full bg-white rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden border border-gray-100">
+      {/* Carte principale avec effets - MOBILE OPTIMIZED */}
+      <div className="relative h-full bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden border border-gray-100">
         
         {/* Gradient background animé au hover */}
         <div className="absolute inset-0 bg-gradient-modern opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
         
         {/* Bordure gradient au hover */}
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-primary-500/20 via-transparent to-gold-500/20 -z-10"></div>
+        <div className="absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-primary-500/20 via-transparent to-gold-500/20 -z-10"></div>
 
-        {/* Icône avec effet 3D et glow */}
-        <div className="relative mb-6 w-fit">
+        {/* Icône avec effet 3D et glow - MOBILE OPTIMIZED */}
+        <div className="relative mb-5 sm:mb-6 w-fit">
           <motion.div 
-            className="relative w-20 h-20 bg-gradient-modern rounded-2xl flex items-center justify-center shadow-glow group-hover:shadow-glow-lg transition-all duration-500"
+            className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-modern rounded-xl sm:rounded-2xl flex items-center justify-center shadow-glow group-hover:shadow-glow-lg transition-all duration-500"
             whileHover={{ 
               rotate: [0, -10, 10, -10, 0],
               scale: 1.1
             }}
             transition={{ duration: 0.5 }}
           >
-            <Icon size={36} className="text-white relative z-10" />
+            <Icon size={28} className="text-white relative z-10 sm:w-9 sm:h-9" />
             
             {/* Glow effect animé */}
             <motion.div
-              className="absolute inset-0 bg-primary-400 rounded-2xl blur-xl opacity-50"
+              className="absolute inset-0 bg-primary-400 rounded-xl sm:rounded-2xl blur-xl opacity-50"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.5, 0.3, 0.5]
@@ -68,36 +68,37 @@ const ServiceCard = ({ icon: Icon, title, description, index = 0 }) => {
           </motion.div>
 
           {/* Badge décoratif */}
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-gold-400 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-gold-glow">
+          <div className="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-gold-400 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-gold-glow">
             <span className="text-white text-xs font-bold">✓</span>
           </div>
         </div>
 
-        {/* Titre avec animation */}
-        <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-primary-600 transition-colors duration-300">
+        {/* Titre avec animation - MOBILE OPTIMIZED */}
+        <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 group-hover:text-primary-600 transition-colors duration-300">
           {title}
         </h3>
 
         {/* Barre de séparation animée */}
-        <div className="w-16 h-1 bg-gradient-gold rounded-full mb-4 group-hover:w-24 transition-all duration-500"></div>
+        <div className="w-12 sm:w-16 h-1 bg-gradient-gold rounded-full mb-3 sm:mb-4 group-hover:w-20 sm:group-hover:w-24 transition-all duration-500"></div>
 
-        {/* Description */}
-        <p className="text-gray-600 leading-relaxed mb-6">
+        {/* Description - MOBILE OPTIMIZED */}
+        <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-5 sm:mb-6">
           {description}
         </p>
 
-        {/* CTA avec flèche animée */}
-        <div className="flex items-center text-primary-600 font-semibold group-hover:text-gold-600 transition-colors duration-300">
+        {/* CTA avec flèche animée - MOBILE OPTIMIZED */}
+        <div className="flex items-center text-primary-600 font-semibold group-hover:text-gold-600 transition-colors duration-300 text-sm sm:text-base py-2"
+          style={{ minHeight: '44px' }}>
           <span className="mr-2">En savoir plus</span>
           <ArrowRight 
-            size={20} 
-            className="transform group-hover:translate-x-2 transition-transform duration-300" 
+            size={18} 
+            className="transform group-hover:translate-x-2 transition-transform duration-300 w-4 h-4 sm:w-5 sm:h-5" 
           />
         </div>
 
-        {/* Particules décoratives */}
-        <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-primary-100 to-gold-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-        <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-br from-gold-100 to-primary-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+        {/* Particules décoratives - Reduced size on mobile */}
+        <div className="absolute top-3 right-3 sm:top-4 sm:right-4 w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-primary-100 to-gold-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+        <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 w-12 sm:w-16 h-12 sm:h-16 bg-gradient-to-br from-gold-100 to-primary-100 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
       </div>
 
       {/* Ombre 3D effet */}

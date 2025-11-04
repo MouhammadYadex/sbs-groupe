@@ -83,16 +83,16 @@ const Footer = () => {
         ></motion.div>
       </div>
 
-      {/* Newsletter Section Premium - Version compacte */}
+      {/* Newsletter Section Premium - MOBILE OPTIMIZED */}
       <div className="relative border-b border-gray-800/50">
-        <div className="container-custom py-12">
+        <div className="container-custom py-8 sm:py-12">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 rounded-2xl p-8 md:p-10 overflow-hidden shadow-2xl"
+              className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 overflow-hidden shadow-2xl"
             >
               {/* Pattern décoratif */}
               <div className="absolute inset-0 opacity-10">
@@ -107,21 +107,22 @@ const Footer = () => {
               <div className="absolute bottom-0 left-0 w-56 h-56 bg-primary-400/20 rounded-full blur-3xl"></div>
 
               <div className="relative z-10 text-center">
-                <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                   <motion.div
                     animate={{ rotate: [0, 5, -5, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   >
-                    <Send size={32} className="text-white drop-shadow-lg" />
+                    <Send size={24} className="sm:w-8 sm:h-8 text-white drop-shadow-lg" />
                   </motion.div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                     Newsletter SBS-GROUPE
                   </h3>
                 </div>
-                <p className="text-white/90 mb-6 max-w-xl mx-auto">
+                <p className="text-sm sm:text-base text-white/90 mb-4 sm:mb-6 max-w-xl mx-auto px-4 sm:px-0">
                   Recevez nos dernières réalisations et offres exclusives
                 </p>
                 
+                {/* Form - MOBILE OPTIMIZED */}
                 <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto mb-4">
                   <div className="flex-1 relative group">
                     <input
@@ -130,18 +131,20 @@ const Footer = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Votre adresse email"
                       required
-                      className="w-full px-5 py-3.5 bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all duration-300"
+                      className="w-full px-4 sm:px-5 py-3 sm:py-3.5 text-base bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:border-white/40 focus:bg-white/15 transition-all duration-300 touch-manipulation"
+                      style={{ fontSize: '16px' }}
                     />
-                    <Mail className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 group-focus-within:text-white transition-colors" size={18} />
+                    <Mail className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 group-focus-within:text-white transition-colors pointer-events-none w-4 h-4 sm:w-[18px] sm:h-[18px]" />
                   </div>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     type="submit"
-                    className="group px-6 py-3.5 bg-white text-primary-600 font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 hover:bg-gold-400 hover:text-white"
+                    className="group px-5 sm:px-6 py-3 sm:py-3.5 bg-white text-primary-600 text-base font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 hover:bg-gold-400 hover:text-white touch-manipulation active:scale-98"
+                    style={{ minHeight: '48px' }}
                   >
                     <span>S'abonner</span>
-                    <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+                    <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4 sm:w-[18px] sm:h-[18px]" />
                   </motion.button>
                 </form>
 
@@ -169,8 +172,8 @@ const Footer = () => {
       </div>
 
       {/* Section principale du footer avec design cards */}
-      <div className="relative container-custom py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="relative container-custom py-12 sm:py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           
           {/* Colonne 1: À propos avec card moderne */}
           <motion.div
@@ -182,41 +185,42 @@ const Footer = () => {
           >
             <div className="relative group">
               {/* Logo compact */}
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
                 <motion.div 
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
-                  className="w-12 h-12 bg-gradient-modern rounded-xl flex items-center justify-center shadow-glow"
+                  className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-modern rounded-xl flex items-center justify-center shadow-glow"
                 >
-                  <span className="text-white font-bold text-xl">SBS</span>
+                  <span className="text-white font-bold text-lg sm:text-xl">SBS</span>
                 </motion.div>
                 <div>
-                  <span className="font-bold text-lg text-white group-hover:text-gold-400 transition-colors">SBS-GROUPE</span>
+                  <span className="font-bold text-base sm:text-lg text-white group-hover:text-gold-400 transition-colors">SBS-GROUPE</span>
                   <p className="text-xs text-gold-400">Excellence & Innovation</p>
                 </div>
               </div>
               
-              <p className="text-gray-400 mb-4 text-sm leading-relaxed">
+              <p className="text-gray-400 mb-4 sm:mb-5 text-sm leading-relaxed">
                 Leader en construction avec <span className="text-white font-semibold">15+ ans d'expérience</span>.
               </p>
               
-              {/* Réseaux sociaux compacts */}
-              <div className="flex gap-2">
+              {/* Réseaux sociaux compacts - MOBILE OPTIMIZED */}
+              <div className="flex gap-2 sm:gap-3">
                 {[
                   { icon: Facebook, href: 'https://facebook.com', color: 'hover:bg-[#1877f2]' },
                   { icon: Twitter, href: 'https://twitter.com', color: 'hover:bg-[#1da1f2]' },
                   { icon: Linkedin, href: 'https://linkedin.com', color: 'hover:bg-[#0077b5]' },
                   { icon: Instagram, href: 'https://instagram.com', color: 'hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af]' },
-                ].map(({ icon: SocialIcon, href, color }, i) => (
+                ].map(({ icon: IconComponent, href, color }, i) => (
                   <motion.a
                     key={i}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -2, scale: 1.05 }}
-                    className={`w-9 h-9 bg-gray-800/50 border border-gray-700/50 rounded-lg flex items-center justify-center ${color} transition-all`}
+                    className={`w-11 h-11 sm:w-10 sm:h-10 bg-gray-800/50 border border-gray-700/50 rounded-lg flex items-center justify-center ${color} transition-all touch-manipulation active:scale-95`}
+                    style={{ minHeight: '44px', minWidth: '44px' }}
                   >
-                    <SocialIcon size={16} className="text-gray-400" />
+                    <IconComponent size={18} className="text-gray-400 sm:w-4 sm:h-4" />
                   </motion.a>
                 ))}
               </div>
@@ -230,17 +234,18 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Navigation</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-bold text-sm sm:text-base uppercase tracking-wider mb-4 sm:mb-5">Navigation</h3>
+            <ul className="space-y-1 sm:space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.path}>
                   <Link 
                     to={link.path}
-                    className="group flex items-center gap-2 text-gray-400 hover:text-gold-400 transition-all text-sm"
+                    className="group flex items-center gap-2 text-gray-400 hover:text-gold-400 transition-all text-sm py-2 touch-manipulation active:scale-98"
+                    style={{ minHeight: '44px' }}
                   >
                     <div className="w-1 h-1 rounded-full bg-primary-500 group-hover:bg-gold-400"></div>
                     <span className="group-hover:translate-x-1 transition-transform">{link.label}</span>
-                    <ArrowRight size={12} className="ml-auto opacity-0 group-hover:opacity-100 transition-all text-gold-400" />
+                    <ArrowRight size={12} className="ml-auto opacity-0 group-hover:opacity-100 transition-all text-gold-400 w-3 h-3" />
                   </Link>
                 </li>
               ))}
@@ -254,10 +259,10 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Services</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white font-bold text-sm sm:text-base uppercase tracking-wider mb-4 sm:mb-5">Services</h3>
+            <ul className="space-y-1 sm:space-y-2">
               {services.map((service, index) => (
-                <li key={index} className="group flex items-center gap-2">
+                <li key={index} className="group flex items-center gap-2 py-2" style={{ minHeight: '44px' }}>
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     className="w-4 h-4 rounded-full bg-gradient-gold flex items-center justify-center flex-shrink-0"
@@ -277,30 +282,31 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Contact</h3>
-            <div className="space-y-3">
+            <h3 className="text-white font-bold text-sm sm:text-base uppercase tracking-wider mb-4 sm:mb-5">Contact</h3>
+            <div className="space-y-2 sm:space-y-3">
               {[
                 { Icon: MapPin, content: '123 Avenue Paris, France' },
                 { Icon: Phone, content: '+33 1 23 45 67 89', href: 'tel:+33123456789' },
                 { Icon: Mail, content: 'contact@sbs-groupe.fr', href: 'mailto:contact@sbs-groupe.fr' }
-              ].map(({ Icon: ContactIcon, content, href }, idx) => (
+              ].map(({ Icon, content, href }, idx) => (
                 <motion.div
                   key={idx}
                   whileHover={{ x: 3 }}
-                  className="group flex items-center gap-2"
+                  className="group flex items-center gap-2 py-2"
+                  style={{ minHeight: '44px' }}
                 >
                   <motion.div
                     whileHover={{ rotate: 360 }}
-                    className="w-8 h-8 bg-gradient-modern rounded-lg flex items-center justify-center flex-shrink-0"
+                    className="w-9 h-9 sm:w-8 sm:h-8 bg-gradient-modern rounded-lg flex items-center justify-center flex-shrink-0"
                   >
-                    <ContactIcon size={14} className="text-white" />
+                    <Icon size={16} className="text-white sm:w-[14px] sm:h-[14px]" />
                   </motion.div>
                   {href ? (
-                    <a href={href} className="text-gray-400 hover:text-white transition-colors text-xs">
+                    <a href={href} className="text-gray-400 hover:text-white transition-colors text-sm touch-manipulation active:scale-98">
                       {content}
                     </a>
                   ) : (
-                    <span className="text-gray-400 group-hover:text-white transition-colors text-xs">
+                    <span className="text-gray-400 group-hover:text-white transition-colors text-sm">
                       {content}
                     </span>
                   )}
@@ -311,20 +317,20 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Barre de copyright ultra-moderne */}
-      <div className="relative bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950 border-t border-gray-800/50 py-5">
+      {/* Barre de copyright ultra-moderne - MOBILE OPTIMIZED */}
+      <div className="relative bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950 border-t border-gray-800/50 py-4 sm:py-5">
         <div className="container-custom relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm">
             {/* Copyright */}
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></div>
-              <p className="text-gray-400">
+              <p className="text-gray-400 text-center md:text-left">
                 &copy; {currentYear} <span className="text-white font-semibold">SBS-GROUPE</span> - Tous droits réservés
               </p>
             </div>
 
-            {/* Liens légaux */}
-            <div className="flex flex-wrap justify-center gap-4">
+            {/* Liens légaux - MOBILE OPTIMIZED */}
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
               {[
                 { label: 'Mentions légales', path: '/mentions-legales' },
                 { label: 'Confidentialité', path: '/politique-confidentialite' },
@@ -333,7 +339,8 @@ const Footer = () => {
                 <Link 
                   key={index}
                   to={item.path}
-                  className="text-gray-400 hover:text-gold-400 transition-colors relative group text-xs"
+                  className="text-gray-400 hover:text-gold-400 transition-colors relative group text-xs sm:text-sm py-2 touch-manipulation active:scale-98"
+                  style={{ minHeight: '44px', display: 'inline-flex', alignItems: 'center' }}
                 >
                   {item.label}
                 </Link>

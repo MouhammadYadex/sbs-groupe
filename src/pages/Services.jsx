@@ -129,9 +129,9 @@ const Services = () => {
         />
       </Helmet>
 
-      {/* Hero Section */}
+      {/* Hero Section - MOBILE OPTIMIZED */}
       <section 
-        className="relative h-[60vh] flex items-center justify-center text-white"
+        className="relative h-[50vh] sm:h-[60vh] flex items-center justify-center text-white"
         style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80)',
           backgroundSize: 'cover',
@@ -139,12 +139,12 @@ const Services = () => {
         }}
       >
         <div className="absolute inset-0 hero-overlay"></div>
-        <div className="relative z-10 text-center container-custom">
+        <div className="relative z-10 text-center container-custom px-4">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold mb-4"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 sm:mb-4"
           >
             Nos Services
           </motion.h1>
@@ -152,24 +152,24 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl"
+            className="text-lg sm:text-xl md:text-2xl"
           >
             Une expertise complète pour tous vos projets de construction
           </motion.p>
         </div>
       </section>
 
-      {/* Grille de services */}
-      <section className="py-20 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="section-title">Nos domaines d'expertise</h2>
-            <p className="section-subtitle">
+      {/* Grille de services - MOBILE OPTIMIZED */}
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container-custom px-4">
+          <div className="text-center mb-12 sm:mb-16" data-aos="fade-up">
+            <h2 className="section-title text-3xl sm:text-4xl">Nos domaines d'expertise</h2>
+            <p className="section-subtitle text-base sm:text-lg">
               Des services variés pour répondre à tous vos besoins en construction
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}

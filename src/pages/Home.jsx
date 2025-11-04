@@ -112,11 +112,11 @@ const Home = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Section Services avec design moderne */}
-      <section className="relative py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+      {/* Section Services avec design moderne - MOBILE OPTIMIZED */}
+      <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
         {/* Décoration de fond */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-100 rounded-full blur-3xl opacity-20 -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-100 rounded-full blur-3xl opacity-20 -z-10"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-primary-100 rounded-full blur-3xl opacity-20 -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-gold-100 rounded-full blur-3xl opacity-20 -z-10"></div>
 
         <div className="container-custom">
           <motion.div 
@@ -124,21 +124,21 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <div className="inline-flex items-center space-x-2 bg-primary-50 rounded-full px-4 py-2 mb-4">
-              <Sparkles size={16} className="text-primary-600" />
-              <span className="text-primary-600 font-semibold text-sm">Nos expertises</span>
+            <div className="inline-flex items-center space-x-2 bg-primary-50 rounded-full px-3 sm:px-4 py-2 mb-3 sm:mb-4">
+              <Sparkles size={14} className="text-primary-600 sm:w-4 sm:h-4" />
+              <span className="text-primary-600 font-semibold text-xs sm:text-sm">Nos expertises</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
               Nos domaines d'intervention
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
               Une expertise complète pour tous vos projets de construction
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -155,25 +155,26 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-center mt-16"
+            className="text-center mt-12 sm:mt-16"
           >
             <Link 
               to="/services" 
-              className="group inline-flex items-center px-8 py-4 bg-gradient-modern text-white font-semibold rounded-xl shadow-glow hover:shadow-glow-lg transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-modern text-white font-semibold text-sm sm:text-base rounded-xl shadow-glow hover:shadow-glow-lg transition-all duration-300 hover:scale-105 touch-manipulation active:scale-98"
+              style={{ minHeight: '56px' }}
             >
               Découvrir tous nos services
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Section Pourquoi nous choisir - Design moderne */}
-      <section className="relative py-24 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white overflow-hidden">
+      {/* Section Pourquoi nous choisir - Design moderne - MOBILE OPTIMIZED */}
+      <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white overflow-hidden">
         {/* Formes décoratives animées */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary-600/20 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-20 left-10 w-48 h-48 sm:w-72 sm:h-72 bg-primary-600/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-64 h-64 sm:w-96 sm:h-96 bg-gold-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
         </div>
 
         <div className="container-custom relative z-10">
@@ -182,17 +183,17 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16 px-4"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
               Pourquoi choisir SBS-GROUPE ?
             </h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto">
               Votre partenaire de confiance pour des projets réussis
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {strengths.map((strength, index) => (
               <motion.div
                 key={index}
@@ -201,31 +202,31 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="group text-center"
+                className="group text-center px-4"
               >
-                <div className="relative mb-6">
-                  <div className="w-24 h-24 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
-                    <strength.icon size={40} />
+                <div className="relative mb-5 sm:mb-6">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+                    <strength.icon size={32} className="sm:w-10 sm:h-10" />
                   </div>
                   {/* Glow effect */}
-                  <div className="absolute inset-0 bg-white/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300 mx-auto w-24 h-24"></div>
+                  <div className="absolute inset-0 bg-white/20 rounded-xl sm:rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300 mx-auto w-20 h-20 sm:w-24 sm:h-24"></div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-gold-400 transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 group-hover:text-gold-400 transition-colors">
                   {strength.title}
                 </h3>
-                <p className="text-blue-100">{strength.description}</p>
+                <p className="text-sm sm:text-base text-blue-100">{strength.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Section Statistiques animées */}
-      <section className="relative py-24 bg-white overflow-hidden">
+      {/* Section Statistiques animées - MOBILE OPTIMIZED */}
+      <section className="relative py-16 sm:py-20 md:py-24 bg-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-50 via-transparent to-gold-50"></div>
         
         <div className="container-custom relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 px-4">
             {[
               { key: 'years', number: counters.years, label: 'Années d\'expérience', suffix: '+' },
               { key: 'projects', number: counters.projects, label: 'Projets réalisés', suffix: '+' },
@@ -240,8 +241,8 @@ const Home = () => {
                 transition={{ duration: 0.5, delay: index * 0.1, type: "spring" }}
                 className="group text-center"
               >
-                <div className="relative inline-block mb-4">
-                  <div className="text-6xl md:text-7xl font-bold bg-gradient-modern bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                <div className="relative inline-block mb-3 sm:mb-4">
+                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-modern bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                     {stat.number}{stat.suffix}
                   </div>
                   <motion.div
@@ -256,7 +257,7 @@ const Home = () => {
                     }}
                   ></motion.div>
                 </div>
-                <div className="text-gray-600 font-semibold text-lg">{stat.label}</div>
+                <div className="text-gray-600 font-semibold text-sm sm:text-base md:text-lg">{stat.label}</div>
               </motion.div>
             ))}
           </div>

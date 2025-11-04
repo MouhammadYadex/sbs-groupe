@@ -57,15 +57,15 @@ const HeroSection = () => {
   }
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-screen min-h-[600px] overflow-hidden">
       {/* Animated background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900/90 via-primary-800/80 to-primary-950/90 z-10"></div>
       
-      {/* Floating shapes decoration */}
+      {/* Floating shapes decoration - OPTIMIZED FOR MOBILE */}
       <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-accent-cyan/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-5 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-primary-500/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-5 sm:right-10 w-56 sm:w-96 h-56 sm:h-96 bg-gold-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/3 w-40 sm:w-64 h-40 sm:h-64 bg-accent-cyan/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <AnimatePresence mode="wait">
@@ -92,22 +92,22 @@ const HeroSection = () => {
           <div className="relative h-full flex items-center z-20">
             <div className="container-custom">
               <div className="max-w-4xl">
-                {/* Badge animé */}
+                {/* Badge animé - MOBILE OPTIMIZED */}
                 <motion.div
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.1, duration: 0.6 }}
-                  className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-6"
+                  className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6"
                 >
                   <span className="w-2 h-2 bg-gold-400 rounded-full animate-pulse"></span>
-                  <span className="text-white text-sm font-medium">Leader en BTP depuis 2010</span>
+                  <span className="text-white text-xs sm:text-sm font-medium">Leader en BTP depuis 2010</span>
                 </motion.div>
 
                 <motion.h1
                   initial={{ y: 40, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2, duration: 0.8, type: "spring" }}
-                  className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
                 >
                   {slides[currentSlide].title}
                   <motion.span 
@@ -123,7 +123,7 @@ const HeroSection = () => {
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.4, duration: 0.7 }}
-                  className="text-2xl md:text-3xl text-white/90 mb-4 font-light"
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 mb-3 sm:mb-4 font-light"
                 >
                   {slides[currentSlide].subtitle}
                 </motion.h2>
@@ -132,24 +132,26 @@ const HeroSection = () => {
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.6, duration: 0.7 }}
-                  className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl leading-relaxed"
+                  className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-10 max-w-2xl leading-relaxed"
                 >
                   {slides[currentSlide].description}
                 </motion.p>
                 
+                {/* CTA Buttons - TOUCH OPTIMIZED */}
                 <motion.div
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.8, duration: 0.7 }}
-                  className="flex flex-col sm:flex-row gap-4"
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                 >
                   <Link 
                     to="/contact" 
-                    className="group relative px-8 py-4 bg-gradient-gold text-white font-semibold rounded-xl shadow-gold-glow hover:shadow-lg overflow-hidden transition-all duration-300 hover:scale-105"
+                    className="group relative px-6 sm:px-8 py-4 sm:py-5 bg-gradient-gold text-white text-base sm:text-lg font-semibold rounded-2xl shadow-gold-glow hover:shadow-xl overflow-hidden transition-all duration-300 hover:scale-105 touch-manipulation active:scale-98 text-center"
+                    style={{ minHeight: '56px' }}
                   >
-                    <span className="relative z-10 flex items-center justify-center">
+                    <span className="relative z-10 flex items-center justify-center gap-2">
                       {slides[currentSlide].cta}
-                      <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </span>
@@ -158,32 +160,33 @@ const HeroSection = () => {
                   </Link>
                   <Link 
                     to="/a-propos" 
-                    className="group px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 hover:border-white/50 transition-all duration-300 flex items-center justify-center"
+                    className="group px-6 sm:px-8 py-4 sm:py-5 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white text-base sm:text-lg font-semibold rounded-2xl hover:bg-white/20 hover:border-white/50 transition-all duration-300 flex items-center justify-center touch-manipulation active:scale-98"
+                    style={{ minHeight: '56px' }}
                   >
                     En savoir plus
-                    <svg className="w-5 h-5 ml-2 group-hover:rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </Link>
                 </motion.div>
 
-                {/* Stats rapides */}
+                {/* Stats rapides - MOBILE OPTIMIZED */}
                 <motion.div
                   initial={{ y: 30, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 1, duration: 0.7 }}
-                  className="mt-12 flex flex-wrap gap-8"
+                  className="mt-8 sm:mt-12 grid grid-cols-2 sm:flex sm:flex-wrap gap-4 sm:gap-8"
                 >
                   {[
                     { number: "15+", label: "Ans d'expérience" },
                     { number: "500+", label: "Projets réalisés" },
                     { number: "98%", label: "Clients satisfaits" }
                   ].map((stat, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <div className="h-12 w-1 bg-gradient-gold rounded-full"></div>
+                    <div key={index} className="flex items-center space-x-2 sm:space-x-3">
+                      <div className="h-10 sm:h-12 w-0.5 sm:w-1 bg-gradient-gold rounded-full"></div>
                       <div>
-                        <div className="text-3xl font-bold text-white">{stat.number}</div>
-                        <div className="text-sm text-gray-300">{stat.label}</div>
+                        <div className="text-2xl sm:text-3xl font-bold text-white">{stat.number}</div>
+                        <div className="text-xs sm:text-sm text-gray-300">{stat.label}</div>
                       </div>
                     </div>
                   ))}
@@ -194,37 +197,43 @@ const HeroSection = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Boutons de navigation modernes */}
+      {/* Boutons de navigation - TOUCH OPTIMIZED */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 z-30 group"
+        aria-label="Slide précédent"
+        className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 z-30 group touch-manipulation active:scale-95"
+        style={{ minWidth: '48px', minHeight: '48px' }}
       >
-        <ChevronLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
+        <ChevronLeft size={20} className="sm:w-6 sm:h-6 group-hover:-translate-x-1 transition-transform" />
       </button>
       
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 z-30 group"
+        aria-label="Slide suivant"
+        className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 z-30 group touch-manipulation active:scale-95"
+        style={{ minWidth: '48px', minHeight: '48px' }}
       >
-        <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
+        <ChevronRight size={20} className="sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
       </button>
 
-      {/* Indicateurs de slides modernes */}
-      <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex space-x-3 z-30">
+      {/* Indicateurs de slides - TOUCH FRIENDLY */}
+      <div className="absolute bottom-6 sm:bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex space-x-2 sm:space-x-3 z-30">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-1 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? 'bg-gold-400 w-12 shadow-gold-glow'
-                : 'bg-white/40 w-8 hover:bg-white/60 hover:w-10'
+            aria-label={`Aller au slide ${index + 1}`}
+            className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 touch-manipulation ${
+              currentSlide === index 
+                ? 'w-10 sm:w-12 bg-gradient-gold shadow-gold-glow' 
+                : 'w-2 sm:w-2.5 bg-white/30 hover:bg-white/50'
             }`}
+            style={{ minWidth: '44px', minHeight: '44px', padding: '20px 8px' }}
           />
         ))}
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - HIDDEN ON MOBILE */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

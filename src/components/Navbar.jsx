@@ -47,27 +47,27 @@ const Navbar = () => {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between">
-          {/* Logo avec effet moderne */}
-          <Link to="/" className="flex items-center space-x-3 group">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Logo avec effet moderne - OPTIMISÉ MOBILE */}
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
             <div className="relative">
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+              <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300 ${
                 scrolled 
                   ? 'bg-gradient-modern shadow-glow' 
                   : 'bg-white/20 backdrop-blur-md border border-white/30'
               } group-hover:scale-110 group-hover:rotate-3`}>
-                <span className="text-white font-bold text-xl">SBS</span>
+                <span className="text-white font-bold text-lg sm:text-xl">SBS</span>
               </div>
               {/* Glow effect */}
-              <div className="absolute inset-0 rounded-xl bg-primary-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-primary-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
             </div>
             <div className="flex flex-col">
-              <span className={`font-bold text-xl transition-colors duration-300 ${
+              <span className={`font-bold text-base sm:text-xl transition-colors duration-300 ${
                 scrolled ? 'text-gray-800' : 'text-white drop-shadow-lg'
               }`}>
                 SBS-GROUPE
               </span>
-              <span className={`text-xs font-medium transition-colors duration-300 ${
+              <span className={`text-[10px] sm:text-xs font-medium transition-colors duration-300 ${
                 scrolled ? 'text-primary-600' : 'text-gold-400'
               }`}>
                 Excellence & Innovation
@@ -128,62 +128,94 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Bouton Menu Mobile moderne */}
+          {/* Bouton Menu Mobile optimisé - TOUCH TARGET 48x48px */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden p-2.5 rounded-xl transition-all duration-300 ${
+            aria-label="Toggle menu"
+            className={`lg:hidden p-3 rounded-xl transition-all duration-300 touch-manipulation active:scale-95 ${
               scrolled 
-                ? 'text-gray-800 hover:bg-gray-100' 
-                : 'text-white hover:bg-white/20 backdrop-blur-sm'
+                ? 'text-gray-800 hover:bg-gray-100 active:bg-gray-200' 
+                : 'text-white hover:bg-white/20 backdrop-blur-sm active:bg-white/30'
             }`}
+            style={{ minWidth: '48px', minHeight: '48px' }}
           >
             <motion.div
               animate={{ rotate: isOpen ? 90 : 0 }}
               transition={{ duration: 0.3 }}
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.div>
           </button>
         </div>
 
-        {/* Menu Mobile moderne */}
+        {/* Menu Mobile optimisé - FULLSCREEN MOBILE */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden"
+              className="lg:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 bg-white/98 backdrop-blur-xl overflow-y-auto"
             >
-              <div className="py-4 space-y-2 bg-white/95 backdrop-blur-xl mt-4 rounded-2xl shadow-modern border border-gray-100">
-                {navLinks.map((link, index) => (
-                  <motion.div
-                    key={link.path}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                  >
-                    <Link
-                      to={link.path}
-                      className={`block mx-3 px-4 py-3 font-medium rounded-xl transition-all duration-300 ${
-                        location.pathname === link.path
-                          ? 'text-white bg-gradient-modern shadow-glow'
-                          : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
-                      }`}
+              <div className="container-custom py-6 sm:py-8">
+                <div className="space-y-2">
+                  {navLinks.map((link, index) => (
+                    <motion.div
+                      key={link.path}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
                     >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        to={link.path}
+                        className={`block px-5 py-4 font-semibold rounded-2xl transition-all duration-300 touch-manipulation active:scale-98 ${
+                          location.pathname === link.path
+                            ? 'text-white bg-gradient-modern shadow-glow text-lg'
+                            : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50 active:bg-gray-100 text-base'
+                        }`}
+                        style={{ minHeight: '56px' }}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span>{link.label}</span>
+                          {location.pathname === link.path && (
+                            <motion.div
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              className="w-2 h-2 rounded-full bg-white"
+                            />
+                          )}
+                        </div>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
                 
-                <div className="px-3 pt-2">
+                {/* CTA Button - TOUCH OPTIMIZED */}
+                <div className="mt-8 pt-6 border-t border-gray-200">
                   <Link
                     to="/contact"
-                    className="block w-full px-6 py-3 text-center font-semibold text-white bg-gradient-gold rounded-xl shadow-gold-glow hover:shadow-lg transition-all duration-300"
+                    className="block w-full px-6 py-5 text-center text-lg font-bold text-white bg-gradient-gold rounded-2xl shadow-gold-glow hover:shadow-xl active:scale-98 transition-all duration-300 touch-manipulation"
+                    style={{ minHeight: '64px' }}
                   >
-                    Demander un devis
+                    <div className="flex items-center justify-center gap-2">
+                      <span>Demander un devis</span>
+                      <motion.span
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >
+                        →
+                      </motion.span>
+                    </div>
                   </Link>
+                  
+                  {/* Contact info mobile */}
+                  <div className="mt-6 space-y-3 text-center text-sm text-gray-600">
+                    <p className="font-medium">Besoin d'aide ?</p>
+                    <a href="tel:+221771234567" className="block text-primary-600 font-semibold hover:text-primary-700 touch-manipulation py-2">
+                      📞 +221 77 123 45 67
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>

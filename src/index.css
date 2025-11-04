@@ -220,3 +220,82 @@ textarea:focus-visible {
 .pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+/* ========================================
+   MOBILE OPTIMIZATIONS
+   ======================================== */
+
+/* Touch-friendly interactions */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Active state for mobile */
+.active\:scale-98:active {
+  transform: scale(0.98);
+}
+
+.active\:scale-95:active {
+  transform: scale(0.95);
+}
+
+/* Prevent text selection on buttons */
+button, .btn, [role="button"] {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth font rendering on mobile */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px; /* Prevent zoom on iOS */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Optimize inputs for mobile */
+  input, textarea, select {
+    font-size: 16px; /* Prevent zoom on focus */
+  }
+
+  /* Better touch targets */
+  a, button, [role="button"], [role="link"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Reduce animations on low-end devices */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Fix for iOS Safari bottom bar */
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+
+  /* Prevent rubber band scrolling */
+  body {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  #root {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+}
+
