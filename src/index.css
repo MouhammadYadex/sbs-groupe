@@ -21,22 +21,24 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar moderne */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2563eb;
-  border-radius: 5px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border-radius: 10px;
+  border: 2px solid #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1d4ed8;
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
 }
 
 /* Utilities personnalisées */
@@ -126,4 +128,95 @@ html {
 
 .swiper-pagination-bullet-active {
   background-color: #2563eb !important;
+}
+
+/* Smooth transitions globales */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Focus states accessibles et modernes */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* Selection text styling */
+::selection {
+  background-color: #2563eb;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* Loading skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(
+    to right,
+    #f0f0f0 0%,
+    #e0e0e0 50%,
+    #f0f0f0 100%
+  );
+  background-size: 2000px 100%;
+}
+
+/* Glass morphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating animation utility */
+@keyframes float-smooth {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.float-animation {
+  animation: float-smooth 3s ease-in-out infinite;
+}
+
+/* Pulse glow effect */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
