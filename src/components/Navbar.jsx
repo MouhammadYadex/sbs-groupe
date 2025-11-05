@@ -42,9 +42,10 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-white/80 backdrop-blur-xl shadow-soft border-b border-gray-100'
-          : 'bg-transparent'
+          ? 'bg-white shadow-soft border-b border-gray-100'
+          : 'bg-gradient-to-b from-black/70 to-transparent'
       }`}
+      style={scrolled ? {} : { backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 sm:h-20">
@@ -54,22 +55,26 @@ const Navbar = () => {
               <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300 ${
                 scrolled 
                   ? 'bg-gradient-modern shadow-glow' 
-                  : 'bg-white/20 backdrop-blur-md border border-white/30'
+                  : 'bg-white/95 border-2 border-white/50'
               } group-hover:scale-110 group-hover:rotate-3`}>
-                <span className="text-white font-bold text-lg sm:text-xl">SBS</span>
+                <span className={`font-bold text-lg sm:text-xl ${
+                  scrolled ? 'text-white' : 'text-primary-600'
+                }`}>SBS</span>
               </div>
               {/* Glow effect */}
               <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-primary-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
             </div>
             <div className="flex flex-col">
               <span className={`font-bold text-base sm:text-xl transition-colors duration-300 ${
-                scrolled ? 'text-gray-800' : 'text-white drop-shadow-lg'
-              }`}>
+                scrolled ? 'text-gray-900' : 'text-white'
+              }`}
+              style={scrolled ? {} : { textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
                 SBS-GROUPE
               </span>
               <span className={`text-xs font-medium transition-colors duration-300 ${
                 scrolled ? 'text-primary-600' : 'text-gold-400'
-              }`}>
+              }`}
+              style={scrolled ? {} : { textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
                 Excellence & Innovation
               </span>
             </div>
@@ -81,15 +86,16 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative px-4 py-2 font-medium transition-all duration-300 rounded-lg group ${
+                className={`relative px-4 py-2 font-semibold transition-all duration-300 rounded-lg group ${
                   location.pathname === link.path
                     ? scrolled
                       ? 'text-primary-600'
                       : 'text-white'
                     : scrolled
-                    ? 'text-gray-700 hover:text-primary-600'
-                    : 'text-white/90 hover:text-white'
+                    ? 'text-gray-800 hover:text-primary-600'
+                    : 'text-white hover:text-gold-400'
                 }`}
+                style={!scrolled ? { textShadow: '1px 1px 3px rgba(0,0,0,0.8)' } : {}}
               >
                 <span className="relative z-10">{link.label}</span>
                 {/* Hover background effect */}
@@ -97,9 +103,11 @@ const Navbar = () => {
                   location.pathname === link.path
                     ? scrolled
                       ? 'bg-primary-50'
-                      : 'bg-white/20 backdrop-blur-sm'
+                      : 'bg-white/30'
                     : 'bg-gray-50 opacity-0 group-hover:opacity-100'
-                }`}></div>
+                }`}
+                style={!scrolled && location.pathname === link.path ? { backgroundColor: 'rgba(255,255,255,0.3)' } : {}}
+                ></div>
                 {/* Active indicator */}
                 {location.pathname === link.path && (
                   <motion.div
@@ -134,8 +142,8 @@ const Navbar = () => {
             aria-label="Toggle menu"
             className={`lg:hidden p-3 rounded-xl transition-all duration-300 touch-manipulation active:scale-95 ${
               scrolled 
-                ? 'text-gray-800 hover:bg-gray-100 active:bg-gray-200' 
-                : 'text-white hover:bg-white/20 backdrop-blur-sm active:bg-white/30'
+                ? 'text-gray-900 hover:bg-gray-100 active:bg-gray-200 bg-white shadow-md' 
+                : 'text-white hover:bg-white/30 active:bg-white/40 bg-black/40 border-2 border-white/50'
             }`}
             style={{ minWidth: '48px', minHeight: '48px' }}
           >

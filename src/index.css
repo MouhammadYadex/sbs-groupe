@@ -295,6 +295,27 @@ button, .btn, [role="button"] {
   .text-gold-400 {
     color: rgb(251, 191, 36) !important;
   }
+  
+  /* Force navbar visibility on mobile */
+  nav {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* Better background colors on mobile */
+  .bg-white {
+    background-color: rgb(255, 255, 255) !important;
+  }
+  
+  .bg-gray-900 {
+    background-color: rgb(17, 24, 39) !important;
+  }
+  
+  /* Ensure text is never transparent on mobile */
+  nav a, nav button, nav span {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
 
   /* Reduce animations on low-end devices */
   @media (prefers-reduced-motion: reduce) {
