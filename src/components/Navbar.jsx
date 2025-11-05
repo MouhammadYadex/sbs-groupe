@@ -67,7 +67,7 @@ const Navbar = () => {
               }`}>
                 SBS-GROUPE
               </span>
-              <span className={`text-[10px] sm:text-xs font-medium transition-colors duration-300 ${
+              <span className={`text-xs font-medium transition-colors duration-300 ${
                 scrolled ? 'text-primary-600' : 'text-gold-400'
               }`}>
                 Excellence & Innovation
